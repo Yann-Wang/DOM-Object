@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        ul p{
+            margin-top:50px;
+        }
+
+        body{
+            height:700px;
+        }
+
+        .u-client{
+            width:200px;
+            border:2px solid darkred;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>geometric quantities property:
+        <p>当前元素边框的左上角相对于它的offsetParent容器元素的X及Y坐标</p>
+        <li>readonly Element offsetParent</li>
+        <li>readonly long offsetLeft</li>
+        <li>readonly long offsetTop</li>
+        <li>-----------------------------</li>
+        <p>当前元素的宽度和高度，包含元素的内容、内边距和边框</p>
+        <li>readonly long offsetWidth</li>
+        <li>readonly long offsetHeight</li>
+        <li>-----------------------------</li>
+        <p>当前元素的宽度和高度，包含元素的内容、内边距</p>
+        <li>readonly long clientWidth</li>
+        <li>readonly long clientHeight</li>
+        <li>-----------------------------</li>
+        <p>当前元素的左边框或顶边框的宽度</p>
+        <li class="u-client">readonly long clientLeft</li>
+        <li class="u-client">readonly long clientTop</li>
+        <li>-----------------------------</li>
+        <p>当前元素所包含的内部滚动元素的内容、内边距、边框、外边距</p>
+        <li>readonly long scrollWidth</li>
+        <li>readonly long scrollHeight</li>
+        <li>-----------------------------</li>
+        <p>当前元素左边缘或顶边缘滚过的像素数</p>
+        <li>long scrollLeft</li>
+        <li>long scrollTop</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var tg = $('ul p');
+        var d  = document.documentElement;
+        var bd = document.body;
+        var client = $('.u-client');
+
+        lg(tg.offsetParent);
+        lg(tg.offsetLeft);
+        lg(tg.offsetTop);
+        line();
+        lg(tg.offsetWidth);
+        lg(tg.offsetHeight);
+        line();
+        lg(tg.clientWidth);
+        lg(tg.clientHeight);
+        line();
+        lg(client.clientLeft);
+        lg(client.clientTop);
+        line();
+        lg(d.scrollWidth);
+        lg(d.scrollHeight);
+        line();
+        bd.scrollTop = 10;
+        lg(bd.scrollLeft);
+        lg(bd.scrollTop);
+        line();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>property from Element attribute</title>
+    <style>
+        ul{
+            list-style-type:circle;
+        }
+    </style>
+</head>
+<body>
+    <h4>HTML元素的公共属性，也是Element对象的属性：</h4>
+    <ul>
+        <li>id    | string id</li>
+        <li>class | string className</li>
+        <li>style | readonly CSSStyleDeclaration style</li>
+        <li>title | string title</li>
+        <li>accessKey</li>
+        <li>contentEditable</li>
+        <li>contentMenu</li>
+        <li>dir</li>
+        <li>draggable</li>
+        <li>dropzone</li>
+        <li>hidden</li>
+        <li>lang</li>
+        <li>spellcheck</li>
+        <li>tabIndex</li>
+    </ul>
+    
+    <h4>其他HTML元素所支持的私有属性：</h4>
+    <ul>
+        <li>a: href, target, ping, rel, media, hreflang, type</li>
+        <li>body: onblur, onfocus, onerror, onhashchange, onload, onmessage, onpopstate, onresize, onscroll, onstroage, onunload</li>
+        <li>form: accept-charset, action, autocomplete, enctype, method, name, novalidate, target</li>
+        <li>html: manifest</li>
+        <li>iframe: src, srcdoc, name, sandbox, seamless, width, height</li>
+        <li>img: alt, src, usemap, ismap, width, height</li>
+        <li>input: accept, alt, autocomplete, autofocus, checked, dirname, disabled, form, formaction, formenctype, formmethod, formnovalidate, formtarget, height, list, max, maxlength, min, multiple, name, pattern, placeholder, readonly required, size, src, step, type, value, width</li>
+        <li>label: form, for</li>
+        <li>li: value</li>
+        <li>link: href, rel, media, hreflang, type, sizes</li>
+        <li>option: disabled, label, selected, value</li>
+        <li>script: src, async, defer, type, charset, text</li>
+        <li>select: autofocus, disabled, form, multiple, name, required, size</li>
+        <li>style: meida, type, scoped</li>
+        <li>textarea: autofocus, cols, disabled, form, maxlength, name, placeholder, readonly, required, rows, wrap</li>
+        <li>table: summary</li>
+        <li>td: colspan, rowspan, headers</li>
+        <li>th: colspan, rowspan, headers, scope</li>
+        <li>video: src, poster, preload, autoplay, loop, controls, width, height</li>
+    </ul>
+
+    <ul v-id="sha" class="u-bd j-ss" data-vv="k-j" id="u-ul" title="property from attribute">property from Element
+        <li>readonly Attr[] attributes</li>
+        <li>readonly DOMTokenList classList</li>
+        <li>readonly object dataset</li>
+        <li>readonly string localName</li>
+        <li>readonly string tagName</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var e_ul = document.body.querySelectorAll('ul')[2];
+
+        lg(e_ul.attributes);
+        lg(e_ul.classList);
+        lg(e_ul.dataset.vv);
+        lg(e_ul.localName); // 'ul' IE8及以下不支持
+        lg(e_ul.tagName); // 'UL'
+        line();
+        lg(e_ul.id);
+        lg(e_ul.className);
+        lg(e_ul.style);
+        lg(e_ul.title);
+        line();
+    </script>
+
+</body>
+</html>

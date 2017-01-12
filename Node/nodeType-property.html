@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <div><!-- abckde --></div>
+    <p>readonly unsigned short nodeType: 节点类型，当前节点实现了哪个子接口。
+        可以直接写数字--Element:1, Text:3, Comment:8, Document:9, Doctype:10,
+        DocumentFragment:11
+    </p>
+    <a href="#">Hi</a>
+    <script src="../lib.js"></script>
+    <script>
+
+        let e_a = $('a');
+        let e_div = $('div');
+
+        //这是 ELEMENT_NODE ，或者 nodeType 1 ，因为 Node. ELEMENT_NODE === 1
+        lg(e_a.nodeType);  // 1
+
+        //这是 TEXT_NODE ，或者 nodeType 3 ，因为 Node.TEXT_NODE === 3
+        lg(e_a.firstChild.nodeType); // 3
+
+        //这是 COMMENT_NODE ，或者 nodeType 8 ，因为 Node.COMMENT_NODE === 8
+        lg(e_div.firstChild.nodeType);  // 8
+
+        //注释节点内部没有文本节点
+        try{
+            lg(e_div.firstChild.childNodes[0].nodeType);
+        }catch(e){
+            console.error(e);
+        }
+
+
+        //这是 DOCUMENT_NODE ，或者 nodeType 9 ，因为 Node.DOCUMENT_NODE === 9
+        lg(document.nodeType);  // 9
+
+        //这是 DOCUMENT_TYPE_NODE ，或者 nodeType 10 ，
+        // 因为 Node.DOCUMENT_TYPE_NODE === 10
+        lg(document.doctype.nodeType); // 10
+
+        /* 这是 DOCUMENT_FRAGMENT_NODE ，或者 nodeType 11
+         * 因为 Node.DOCUMENT_FRAGMENT_NODE === 11 */
+        lg(document.createDocumentFragment().nodeType); // 11
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul>dom property:
+        <li>readonly unsigned long childElementCount</li>
+        <li>readonly HTMLCollection children</li>
+        <li>readonly Element firstElementChild</li>
+        <li>readonly Element lastElementChild</li>
+        <li>readonly Element previousElementChild</li>
+        <li>readonly Element nextElementChild</li>
+        <li>string innerHTML</li>
+        <li>readonly boolean isContentEditable</li>
+
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        let e_ul = $('ul');
+
+        lg(e_ul.childElementCount);
+        lg(e_ul.children);
+        line();
+        lg(e_ul.firstElementChild);
+        lg(e_ul.lastElementChild);
+        lg(e_ul.previousElementSibling);
+        lg(e_ul.nextElementSibling);
+        line();
+        lg(e_ul.innerHTML);
+        lg(e_ul.isContentEditable);
+
+
+    </script>
+
+</body>
+</html>

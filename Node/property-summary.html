@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <div><!--this is comment--></div>
+    <ul>Node property summary:
+        <li>readonly NodeList childNodes</li>
+        <li>readonly Node firstChild</li>
+        <li>readonly Node lastChild</li>
+        <li>readonly Node nextSibling</li>
+        <li>readonly Node previousSibling</li>
+        <li>readonly Node parentNode</li>
+        <li>readonly string nodeName</li>
+        <li>readonly unsigned short nodeType</li>
+        <li>string nodeValue</li>
+        <li>readonly Document ownerDocument</li>
+        <li>string textContent</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        let e_ul = $('ul');
+        let e_div= $('div');
+
+        lg(document.body.childNodes);
+        line();
+        lg(document.body.firstChild); // #text
+        lg(document.body.lastChild); // script
+        line();
+        lg(e_ul.nextSibling);
+        lg(e_ul.previousSibling);
+        lg(e_ul.parentNode);
+        line();
+        line();
+        lg(e_ul.ownerDocument);
+        lg(e_ul.textContent);
+
+
+    </script>
+
+</body>
+</html>

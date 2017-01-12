@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="u-j u-s">DOMTokenList property:
+        <li>readonly unsigned long length</li>
+    </ul>
+    <ul>method:
+        <li>void add(string token)</li>
+        <li>void remove(string token) </li>
+        <li>boolean toggle(string token) </li>
+        <li>boolean contains(string token)</li>
+        <li>string item(unsigned long index)</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var e_ul = $('ul');
+        var cl   = e_ul.classList;
+
+        lg(cl.length);
+        line();
+        cl.add('u-m');
+        cl.remove('u-j');
+        line();
+        lg(cl.toggle('u-v'));
+        line();
+        lg(cl.contains('u-s'));
+        lg(cl.item(0));
+
+
+
+
+    </script>
+
+</body>
+</html>

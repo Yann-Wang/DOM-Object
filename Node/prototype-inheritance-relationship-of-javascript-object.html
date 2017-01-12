@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul>javascript对象原型继承关系
+        <li>Object.prototype < window/global </li>
+        <li>Object.prototype < Object </li>
+        <li>Object.prototype < Function.prototype </li>
+        <li>Object.prototype < Array.prototype </li>
+        <li>Object.prototype < Date.prototype </li>
+        <li>Object.prototype < RegExp.prototype </li>
+        <li>Object.prototype < Error.prototype </li>
+        <li>Object.prototype < String.prototype </li>
+        <li>Object.prototype < Number.prototype </li>
+        <li>Object.prototype < Boolean.prototype </li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        lg(Object.prototype.isPrototypeOf(window));
+        line();
+        lg(Object.prototype.isPrototypeOf(Object));
+        lg(Object.prototype.isPrototypeOf(Function.prototype));
+        lg(Object.prototype.isPrototypeOf(Array.prototype));
+        line();
+        lg(Object.prototype.isPrototypeOf(Date.prototype));
+        lg(Object.prototype.isPrototypeOf(RegExp.prototype));
+        lg(Object.prototype.isPrototypeOf(Error.prototype));
+        line();
+        lg(Object.prototype.isPrototypeOf(String.prototype));
+        lg(Object.prototype.isPrototypeOf(Number.prototype));
+        lg(Object.prototype.isPrototypeOf(Boolean.prototype));
+
+    </script>
+
+</body>
+</html>

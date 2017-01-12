@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        .u-ul{
+            width:400px;
+            background:greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="u-ul" >Document method of getting Node :
+        <li name="nm-ul">Element getElementById(string elementId)</li>
+        <li id="g-n">NodeList getElementsByClassName(string classNames)</li>
+        <li>NodeList getElementsByName(string elementName)</li>
+        <li>NodeList getElementsByTagName(string qualifiedName)</li>
+        <li>---------------------</li>
+        <li>Element querySelector(string selectors)</li>
+        <li>NodeList querySelectorAll(string selectors)</li>
+        <li>---------------------</li>
+        <li>boolean hasFocus()</li>
+        <li>Element elementFromPoint(float x, float y)</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var e_ul = $('ul');
+        var d    = document;
+
+        lg(d.getElementById("g-n"));
+        lg(d.getElementsByClassName("u-ul"));
+        lg(d.getElementsByName("nm-ul"));
+        lg(d.getElementsByTagName("li"));
+        line();
+        lg(d.querySelector("ul li[name='nm-ul']"));
+        lg(d.querySelectorAll("ul li"));
+        line();
+        lg(d.hasFocus());
+        lg(d.elementFromPoint(200,200));
+    </script>
+
+
+</body>
+</html>

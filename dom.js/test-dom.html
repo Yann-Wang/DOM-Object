@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="test">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ul>传入dom()的值的类型有四种
+        <li>HTML字符串</li>
+        <li>节点引用： Element节点， dom()对象自身</li>
+        <li>节点列表或数组：元素节点数组， NodeList, HTMLCollection</li>
+        <li>CSS选择器字符串</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script src="./dom.js"></script>
+    <script>
+        var bd = document.body;
+
+        lg(dom());
+        lg(dom(''));
+        lg(dom('body'));
+        lg(dom('<p>Hello</p><p> World!</p>'));
+        lg(dom(bd));
+        lg(dom([bd, bd]));
+        lg(dom(bd.children));
+        lg(dom(dom('body')));
+        line();
+        //dom().html()
+        lg(dom('.test li:first-child').html('one'));
+        lg(dom('.test li:first-child').html() === 'one');
+        line();
+        // dom().text()
+        lg(dom('.test li:last-child').html('three'));
+        lg(dom('.test li:last-child').html() === 'three');
+        line();
+        //dom().append()
+        dom('.test').append('<li>4</li>');
+        dom('.test').append(document.createElement('li'));
+        dom('.test').append(dom('.test li:first-child'));
+        line();
+    </script>
+
+
+</body>
+</html>

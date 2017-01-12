@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul v-id="u-jj">Attr对象属性：
+        <li>readonly string localName</li>
+        <li>readonly string name</li>
+        <li>readonly string namespaceURI</li>
+        <li>readonly string prefix</li>
+        <li>string value</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var e_ul = $('ul');
+        var e_ul_attr = e_ul.attributes[0];
+
+        lg(e_ul_attr.localName);
+        lg(e_ul_attr.name);
+        lg(e_ul_attr.namespaceURI);
+        lg(e_ul_attr.prefix);
+        lg(e_ul_attr.value);
+    </script>
+</body>
+</html>

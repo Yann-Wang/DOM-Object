@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .c-cc{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h4>Window method</h4>
+    <ul>
+        <li>void alert(string message)</li>
+        <li>boolean comfirm(string message)</li>
+        <li>string prompt(string message[, string default])</li>
+        <li>any showModalDialog(string url[, any arguments])</li>
+        <li>-----------------------------------------</li>
+        <li>Window open([string url],[string target],[string features],[string replace])</li>
+        <li>void print()</li>
+        <li>void close()</li>
+        <li>-----------------------------------------</li>
+        <li>void blur()</li>
+        <li>void focus()</li>
+        <li>-----------------------------------------</li>
+        <li>string atob(string atob)</li>
+        <li>string btoa(string btoa)</li>
+        <li>-----------------------------------------</li>
+        <li>void clearInterval(long handle)</li>
+        <li>void clearTimeout(long handle)</li>
+        <li>long setInterval(function f, unsigned long interval, any args...)</li>
+        <li>long setTimeout(function f, unsigned long timeout, any args...)</li>
+        <li>-----------------------------------------</li>
+        <li class="c-cc">CSSStyleDeclaration getComputedStyle(Element elt[,string pseudoElt])</li>
+        <li>void postMessage(any message,string targetOrigin[,MessagePort[] ports])</li>
+        <li>-----------------------------------------</li>
+
+    </ul>
+
+    <script src="../lib.js"></script>
+    <script>
+        var g = window;
+        var e_cc = $('.c-cc');
+
+        g.onfocus = function () {
+            lg("get focus");
+        };
+
+        g.onblur = function () {
+            lg('--------------');
+            lg("lose focus");
+        };
+
+        delay(function () {
+            lg(alert('alert cnt'));
+            lg(confirm('Are you confirm ?'));
+            lg(prompt('name','context'));
+
+            // showModalDialog 已废弃
+            try{
+                lg(showModalDialog('./test.html',{data:'hello modal dialog.'}));
+            }catch(e){
+                lg("This browser doesn't support showModalDialog.");
+                lg(e);
+            }
+
+            line();
+            // window.open 也不太实用
+            //g.open('./test.html','_blank');
+
+            // bootstrap 的模态框 是用 DOM手动画出来的
+
+            /*delay(function () {
+                lg('==============');
+                g.focus();
+
+
+                delay(function () {
+                    lg('==============');
+                    g.blur();
+
+                },2000);
+
+            },4000);*/
+
+        },10000);
+
+        delay(function () {
+            lg(g.getComputedStyle(e_cc).color);
+        },1000)
+
+
+    </script>
+    
+</body>
+</html>

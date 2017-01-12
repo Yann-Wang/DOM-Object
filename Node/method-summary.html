@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <div><!--this is comment--></div>
+    <p></p>
+    <ul>Node method summary:
+        <li>Node appendChild(Node newChild) </li>
+        <li>Node insertBefore(Node newChild, Node refChild) </li>
+        <li>boolean hasChildNodes() </li>
+        <li>void normalize() </li>
+        <li>Node removeChild(Node oldChild) </li>
+        <li>Node replaceChild(Node newChild, Node oldChild) </li>
+        <li>Node cloneNode(boolean deep) </li>
+        <li>boolean isEqualNode(Node other) </li>
+        <li>boolean isSameNode(Node other) </li>
+        <li>unsigned short compareDocumentPosition(Node other) </li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        let newTextNode = document.createTextNode(" this is newTextNode ");
+        let testNode    = document.createTextNode(" this is testNode ");
+        let e_p         = $('p');
+        let e_div       = $('div');
+        let e_p_clone;
+
+        function Normalize(dom) {
+            lg(dom.childNodes);
+            dom.normalize();
+            lg(dom.childNodes);
+        }
+
+        e_p.appendChild(newTextNode);
+        e_p.insertBefore(testNode,newTextNode);
+        line();
+        lg(e_p.hasChildNodes());
+        Normalize(e_p);
+        line();
+        let e_p_child = e_p.removeChild(e_p.firstChild);
+        e_div.replaceChild(e_p_child,e_div.firstChild);
+        line();
+        e_p_clone = e_p.cloneNode(true);
+        lg(e_p.isEqualNode(e_p_clone));
+        lg(e_p.isSameNode(e_p_clone));
+
+    </script>
+</body>
+</html>

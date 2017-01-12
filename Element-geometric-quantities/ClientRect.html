@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        .demo{
+            height:25px;
+            width:25px;
+            padding:25px;
+            border:25px solid salmon;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>ClientReact property:
+        <li>readonly float top</li>
+        <li>readonly float right</li>
+        <li>readonly float bottom</li>
+        <li>readonly float left</li>
+        <li>readonly float width</li>
+        <li>readonly float height</li>
+    </ul>
+    <div class="demo"></div>
+    <script src="../lib.js"></script>
+    <script>
+        var e_div = $('.demo');
+
+        lg(e_div.getBoundingClientRect());
+    </script>
+
+</body>
+</html>

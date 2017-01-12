@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        table{
+            margin: 0 auto;
+        }
+        th{
+            text-align: left;
+        }
+        td{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <p>Element property: readonly CSSStyleDeclaration style</p>
+    <h4>CSSStyleDeclaration property:</h4>
+
+    <p>表示一个CSS样式属性及其值的集合，可以通过和CSS属性名相似的JavaScript属性名来查询或设置这些样式。</p>
+    <p>属性'float'与保留词float冲突，所以它转变为属性cssFloat。</p>
+
+    <ul style="list-style-type:circle;float:none;">
+        <li>cssText</li>
+        <li>readonly unsigned long length</li>
+        <li>---------------------------------</li>
+        <li>string cssProperty</li>
+    </ul>
+
+    <table>
+        <tr><th>CSS property</th><th>JavaScript property</th></tr>
+    </table>
+
+    <h4>CSSStyleDeclaration method:</h4>
+    <ul>不支持IE678
+        <li>string getPropertyValue(string cssPropertyName)</li>
+        <li>void setProperty(string cssPropertyName, string cssPropertyName)</li>
+    </ul>
+
+    <script src="../lib.js"></script>
+    <script>
+        var e_ul = $('ul');
+
+        lg(e_ul.style);
+        line();
+        lg(e_ul.style.cssText);
+        line();
+        lg(e_ul.style.length);
+        line();
+        e_ul.style.backgroundColor = 'greenyellow';
+        lg(e_ul.style.cssFloat);
+        line2();
+        lg(e_ul.style.getPropertyValue('list-style-type'));
+        lg(e_ul.style.getPropertyValue('background-color'));
+        line();
+        lg(e_ul.style.setProperty('border','1px solid purple'));
+        line();
+
+    </script>
+    <script src="./CSSStyleDeclaration-JavaScript-property-from-CSS-property.js"></script>
+
+</body>
+</html>

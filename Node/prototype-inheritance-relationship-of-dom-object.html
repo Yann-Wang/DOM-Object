@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>dom对象原型继承关系：
+        <li> Object.prototype < EventTarget.prototype < Node.prototype < Element.prototype          < HTMLElement.prototype < HTMLAnchorElement.prototype </li>
+        <li> Object.prototype < EventTarget.prototype < Node.prototype < Attr.prototype </li>
+        <li> Object.prototype < EventTarget.prototype < Node.prototype < CharacterData.prototype    < Text.prototype </li>
+        <li> Object.prototype < EventTarget.prototype < Node.prototype < CharacterData.prototype    < Comment.prototype </li>
+        <li> Object.prototype < EventTarget.prototype < Node.prototype < Document.prototype         < HTMLDocument.prototype </li>
+        <li> Object.prototype < EventTarget.prototype < Node.prototype < DocumentFragment.prototype </li>
+        <li> Object.prototype < NodeList.prototype</li>
+        <li> Object.prototype < HTMLCollection.prototype</li>
+    </ul>
+
+
+    <a href="#">Hi</a> <!-- 这个 HTMLAnchorElement 继承自…… -->
+    <img src="" alt="">
+    <form action="">
+        <input type="text">
+        <select name="" ></select>
+        <textarea name=""  cols="30" rows="10"></textarea>
+    </form>
+
+    <script src="../lib.js"></script>
+    <script>
+        let e_a = $('a');
+
+        lg(Object.prototype.isPrototypeOf(EventTarget.prototype));
+        lg(EventTarget.prototype.isPrototypeOf(Node.prototype));
+
+        lg(Node.prototype.isPrototypeOf(Element.prototype));
+        lg(Element.prototype.isPrototypeOf(HTMLElement.prototype));
+        lg(HTMLElement.prototype.isPrototypeOf(HTMLAnchorElement.prototype));
+
+        lg(e_a instanceof HTMLAnchorElement);
+
+        line();
+        lg(Node.prototype.isPrototypeOf(Attr.prototype));
+        line();
+        lg(Node.prototype.isPrototypeOf(CharacterData.prototype));
+        lg(CharacterData.prototype.isPrototypeOf(Text.prototype));
+        line();
+        lg(CharacterData.prototype.isPrototypeOf(Comment.prototype));
+        line();
+        lg(Node.prototype.isPrototypeOf(Document.prototype));
+        lg(Document.prototype.isPrototypeOf(HTMLDocument.prototype));
+        line();
+        lg(Node.prototype.isPrototypeOf(DocumentFragment.prototype));
+
+    </script>
+</body>
+</html>

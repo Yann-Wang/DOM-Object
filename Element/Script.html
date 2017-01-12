@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <h4>Script private property:</h4>
+
+    <ul>
+        <li>boolean async</li>
+        <li>string charset</li>
+        <li>boolean defer</li>
+        <li>string src</li>
+        <li>string text</li>
+        <li>string type</li>
+    </ul>
+    <h4>note:</h4>
+    <p>IE9+, chrome, firefox, opera 都支持async和defer</p>
+    <p>如果同时在一个script元素上使用两者，async属性会压过defer</p>
+
+    <h4>script元素的解析执行流程</h4>
+    <p>普通script元素：先解析script元素，然后停止解析，执行JS，然后继续解析</p>
+    <p>defer script元素： 在完成解析并关闭 &lt;/html&gt; 节点之后，开始解析，然后执行</p>
+    <p>async script元素： 遇到该script后，另起线程下载文件，下载完后就解析执行；原线程继续解析；</p>
+
+    <h4>在script元素的js中，不能操作还未解析的DOM节点，否则会报错。</h4>
+    <h4>使用动态script元素异步加载并解析外部JavaScript</h4>
+    <!--<script async src="./test.js"></script>-->
+    <script defer src="./test.js"></script>
+    <script src="../lib.js"></script>
+    <script>
+        var e_script = $('script');
+        var e_script2= document.body.querySelectorAll('script')[2];
+
+        lg(e_script.async);
+        lg(e_script.charset);
+        lg(e_script.defer);
+        line();
+        lg(e_script.src);
+        lg(e_script2.text);
+        lg(e_script.type);
+        line();
+    </script>
+</body>
+</html>

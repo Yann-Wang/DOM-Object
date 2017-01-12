@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <p v-id="ddd"></p>
+    <ul>Element method of handling Attr:
+        <li>string getAttribute(string qualifiedName) </li>
+        <li>void setAttribute(string qualifiedName, string value) </li>
+        <li>void removeAttribute(string qualifiedName) </li>
+        <li>boolean hasAttribute(string qualifiedName)</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        let e_p = $('p');
+
+        lg(e_p.getAttribute("v-id"));
+        e_p.setAttribute("v-id","haha");
+        line();
+        lg(e_p.getAttribute("v-id"));
+        e_p.removeAttribute("v-id");
+        lg(e_p.hasAttributes("v-id"));
+    </script>
+</body>
+</html>

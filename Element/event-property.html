@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <h4>Element property:</h4>
+    <p>大多数事件从文档层次结构冒泡到Document节点，然后从那儿再到Window对象。
+    Window对象有不少专有的事件处理程序，包括onblur, onerror, onfocus, onload, onscroll。
+        body元素的HTML属性注册的事件处理程序会注册在Window对象上。
+    </p>
+    <p>这儿列出的大多数事件只会在特定类型的HTML元素上触发，不过由于这些事件大多会
+    在文档树中向上冒泡，因此这些事件处理程序属性一般是为所有元素定义的。
+        在HTML5的audio和video上出发的媒体事件不会冒泡。
+        一些与HTML5表单相关的事件也不会冒泡。
+    </p>
+    <ul>
+        <li>onabort</li>
+        <li>onblur</li>
+        <li>onchange</li>
+        <li>onclick</li>
+        <li>oncontextmenu</li>
+        <li>ondblclick</li>
+        <li>ondrag</li>
+        <li>ondragend</li>
+        <li>ondragenter</li>
+        <li>ondragleave</li>
+        <li>ondragover</li>
+        <li>ondragstart</li>
+        <li>ondrop</li>
+        <li>onerror</li>
+        <li>onfocus</li>
+        <li>oninput</li>
+        <li>onkeydown</li>
+        <li>onkeypress</li>
+        <li>onkeyup</li>
+        <li>onload</li>
+        <li>onmousedown</li>
+        <li>onmousemove</li>
+        <li>onmouseout</li>
+        <li>onmouseover</li>
+        <li>onmouseup</li>
+        <li>onmousewheel</li>
+        <li>onreset</li>
+        <li>onscroll</li>
+        <li>onselect</li>
+        <li>onsubmit</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var e_ul = $('ul');
+
+        e_ul.onload = function () {
+            lg('ul load !');  //不会被触发
+        };
+
+        e_ul.onscroll = function () {
+            lg('ul scroll !'); //不会被触发
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul>unsigned short compareDocumentPosition(Node other)
+        每一位置位 代表的含义：
+        <li>0x00: 相同元素节点</li>
+        <li>0x01：选取的节点和传入的节点不在相同的文档中</li>
+        <li>0x02：传入节点在选取节点之前</li>
+        <li>0x04：传入节点在选取节点之后</li>
+        <li>0x08：传入节点是选取节点的上辈</li>
+        <li>0x10：传入节点是选取节点的下辈</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var e_ul = $('ul');
+        function getOtherDocumentNode() {
+            var tmp = document.createDocumentFragment();
+            tmp.appendChild(document.createTextNode('this is a text node'));
+            return tmp.firstChild;
+        }
+        var otherDocumentNode = getOtherDocumentNode();
+
+        lg(e_ul.childNodes[0].compareDocumentPosition(e_ul.childNodes[0])); // 0
+        lg(e_ul.childNodes[1].compareDocumentPosition(e_ul.childNodes[0])); // 2
+        lg(e_ul.childNodes[0].compareDocumentPosition(e_ul.childNodes[1])); // 4
+        lg(e_ul.childNodes[1].compareDocumentPosition(e_ul)); //10 = 8+2
+        lg(e_ul.compareDocumentPosition(e_ul.childNodes[0])); // 20 = 16+4
+
+        // chrome/firefox/opera:37 IE:35
+        lg(e_ul.compareDocumentPosition(otherDocumentNode));
+
+    </script>
+
+</body>
+</html>

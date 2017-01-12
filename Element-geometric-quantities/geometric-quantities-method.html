@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        body,div,p{
+            margin:0;
+            padding:0;
+        }
+        .demo{
+            height:50px;
+            width:25px;
+            padding:25px;
+            border:25px solid salmon;
+        }
+        .u-p{
+            border:1px solid blue;
+            width:23px;
+            height:23px;
+            background:darkmagenta;
+        }
+        .space{
+            height:700px;
+        }
+
+        .view{
+            background:seagreen;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>geometric quantities method:
+        <li>ClientRect getBoundingClientRect()</li>
+        <li>ClientRect getClientRects()</li>
+        <li class="">void scrollIntoView([boolean top])</li>
+    </ul>
+    <div class="demo">
+        <span class="u-p">test t</span>
+    </div>
+    <div class="space"></div>
+    <div class="view">scroll into view</div>
+    <div class="space"></div>
+    <script src="../lib.js"></script>
+    <script>
+        var e_div = $('.demo');
+        var e_span= $('.u-p');
+        var e_div_view = $('.view');
+
+        lg(e_div.getBoundingClientRect());
+        lg(e_span.getClientRects());
+
+        delay(function () {
+            e_div_view.scrollIntoView(); //不传参数和传入true是等价的
+        });
+
+        delay(function () {
+            e_div_view.scrollIntoView(false);
+        },6000);
+    </script>
+</body>
+</html>

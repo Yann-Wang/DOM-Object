@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+
+    <a href="#">Hi</a>
+    <div><!--this is comment--></div>
+    <p>readonly string nodeName: 节点的名字，对于Element节点而言，值为元素的标签名（大写），
+        也可以通过Element接口的tagName属性得到。
+        对于大多数其他类型的节点而言，该值为一个取决于节点类型的常量字符串。
+    </p>
+    <script src="../lib.js"></script>
+    <script>
+
+        let e_a   = $('a');
+        let e_div = $('div');
+
+        lg(e_a.nodeName); //输出 'A'
+
+        lg(e_a.firstChild.nodeName); // '#text'
+
+        lg(e_div.firstChild.nodeName); // '#comment'
+
+        lg(document.nodeName); // '#document'
+
+        lg(document.doctype.nodeName); // 'html'
+        //lg(document.doctype); // <!DOCTYPE html> 'object'
+
+        lg(document.createDocumentFragment().nodeName); // '#document-fragment'
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css-stylesheet-and-css-rule/style.css" >
+    <style media="screen" title="style and link" type="text/css">
+        ul{
+            list-style-type:circle;
+        }
+    </style>
+
+</head>
+<body>
+    <h4>Style property:</h4>
+    <ul>
+        <li>boolean disabled</li>
+        <li>string media</li>
+        <li>readonly CSSStyleSheet sheet</li>
+        <li>string title</li>
+        <li>string type</li>
+    </ul>
+    
+    <h4>Link property:</h4>
+    <ul>
+        <li>boolean disabled</li>
+        <li>readonly DOMTokenList relList</li>
+        <li>readonly CSSStyleSheet sheet</li>
+        <li>-----------------------------------</li>
+        <li>string href</li>
+        <li>string rel</li>
+        <li>string media</li>
+        <li>string hreflang</li>
+        <li>string type</li>
+        <li>readonly DOMTokenList sizes</li>
+    </ul>
+
+    <script src="../lib.js"></script>
+    <script>
+        var e_style = $('style');
+
+        lg(e_style.disabled);
+        line();
+        lg(e_style.media);
+        line();
+        lg(e_style.sheet);
+        line();
+        lg(e_style.title);
+        line();
+        lg(e_style.type);
+        line2();
+
+        var e_link = $('link');
+
+        lg(e_link.disabled);
+        line();
+        lg(e_link.relList);
+        line();
+        lg(e_link.sheet);
+    </script>
+</body>
+</html>

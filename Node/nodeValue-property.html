@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <a href="#">Hi</a>
+    <div><!--this is comment--></div>
+    <ul>string nodeValue: 节点的值，
+        <li>对于Text节点而言，它的值为对应的文本内容。对于Comment节点，它的值为对应的注释内容。</li>
+        <li>对于Element节点、Document节点、Doctype节点、DocumentFragment节点，返回null。</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+
+        let e_a = $('a');
+        let e_div = $('div');
+
+        lg(e_a.nodeValue); //null
+        lg(e_a.firstChild.nodeValue); // 'Hi' //输出文本字符串
+        lg(e_div.firstChild.nodeValue); // null
+        lg(document.nodeValue); //null
+        lg(document.doctype.nodeValue); // null
+        lg(document.createDocumentFragment().nodeValue);//null
+
+    </script>
+</body>
+</html>

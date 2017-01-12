@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul>DocumentType method:
+        <li>readonly string name</li>
+        <li>readonly string publicId</li>
+        <li>readonly string systemId</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var doctype = document.implementation.createDocumentType("html", "", "");
+        dr(doctype);
+        line();
+        lg(doctype.name); // "html"
+        line();
+        lg(doctype.publicId); // ""
+        line();
+        lg(doctype.systemId); // ""
+        line();
+    </script>
+
+</body>
+</html>

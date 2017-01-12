@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul> 4 methods for creating DOM node :
+        <li>Element createElement(string localName) </li>
+        <li>Text createTextNode(string data) </li>
+        <li>Comment createComment(string data) </li>
+        <li>DocumentFragment createDocumentFragment()</li>
+    </ul>
+    <ul> other 3 methods from DOMImplementation methods:
+        <li>Document createHTMLDocument(string title) </li>
+        <li>Document createDocument(string namespace, string qualifiedName, DocumentType doctype) </li>
+        <li>DocumentType createDocumentType(string qualifiedName, publicId, systemId) </li>
+    </ul>
+    <ul> create Event object:
+        <li>Event createEvent(string eventInterface)</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var e_div = document.createElement('div');
+        lg(e_div.nodeType); // 1
+
+        var tt_hi = document.createTextNode('Hi');
+        lg(tt_hi.nodeType); // 3
+
+        var cmt_note = document.createComment("注释");
+        lg(cmt_note.nodeType); // 8
+
+        var dcmt = document.implementation.createDocument("","html");
+        // var dcmt = document.implementation.createHTMLDocument("title name");
+        lg(dcmt.nodeType);  // 9
+
+        var doctype = document.implementation.createDocumentType("html","","");
+        lg(doctype.nodeType); // 10
+
+        var fgmt = document.createDocumentFragment();
+        lg(fgmt.nodeType); //  11
+
+    </script>
+</body>
+</html>

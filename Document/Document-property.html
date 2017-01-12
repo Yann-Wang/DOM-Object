@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <ul>Document Property:
+        <li>------------------ -dom ref--------------</li>
+        <li>readonly Window defaultView</li>
+        <li>readonly DocumentType doctype</li>
+        <li>readonly Element documentElement</li>
+        <li>---------------</li>
+        <li>readonly Element head</li>
+        <li>readonly string characterSet</li>
+        <li>string title</li>
+        <li>readonly CSSStyleSheet[] styleSheets</li>
+        <li>---------------</li>
+        <li>Element body</li>
+        <li>readonly HTMLCollection  embeds</li>
+        <li>readonly HTMLCollection forms</li>
+        <li>readonly HTMLCollection images</li>
+        <li>readonly HTMLCollection links</li>
+        <li>readonly HTMLCollection scripts</li>
+        <li>-----------------------------------------</li>
+        <li>readonly Element activeElement</li>
+        <li>readonly string defaultCharset</li>
+        <li>string cookie</li>
+        <li>string domain</li>
+        <li>readonly DOMImplementation implementation</li>
+        <li>readonly string lastModified</li>
+        <li>readonly Location location</li>
+        <li>readonly string referrer</li>
+        <li>readonly string readyState</li>
+    </ul>
+    <script src="../lib.js"></script>
+    <script>
+        var d = document;
+
+        lg(d.defaultView);
+        line();
+        lg(d.doctype);
+        lg(d.documentElement);
+        line();
+        lg(d.head);
+        lg(d.characterSet);
+        lg(d.title);
+        lg(d.styleSheets);
+        line();
+        lg(d.body);
+        lg(d.embeds);
+        lg(d.forms);
+        lg(d.images);
+        lg(d.links);
+        lg(d.scripts);
+        line();
+        lg(d.activeElement);
+        lg(d.defaultCharset);
+        lg(d.cookie);
+        lg(d.domain);
+        lg(d.implementation);
+        lg(d.lastModified);
+        lg(d.location);
+        lg(d.referrer);
+        lg(d.readyState);
+    </script>
+
+</body>
+</html>
