@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div id="cc"></div>
+	<script>
+		var str="<div>abcd</div><p>pppps</p><input type='text' value='xxx'/>";
+		var cc = document.getElementById("cc");
+		cc.innerHTML = str;
+
+		//reverse the subnode of node cc
+        function reverse(n){
+            var f= document.createDocumentFragment();
+            while(n.lastChild)
+                f.appendChild(n.lastChild);
+            n.appendChild(f);
+        }
+
+		reverse(cc);
+	</script>
+</body>
+</html>
