@@ -1,5 +1,6 @@
 /**
  * Created by a_wav on 2017/1/4.
+ * cdn: http://okup5z621.bkt.clouddn.com/lib.js
  */
 
 var lg, dr;
